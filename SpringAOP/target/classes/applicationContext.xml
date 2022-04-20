@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+ http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd">
+    <bean id="target" class="wbazmy.study.aop.Target"></bean>
+
+    <bean id="aspect" class="wbazmy.study.aop.Aspect"></bean>
+
+    <!--配置织入，告诉框架哪些方法（切点）需要进行哪些增强-->
+    <aop:config>
+        <!--切面-->
+        <aop:aspect ref="aspect">
+            <aop:before method="before" pointcut="execution(public void wbazmy.study.aop.Target.get())"/>
+        </aop:aspect>
+    </aop:config>
+
+
+</beans>

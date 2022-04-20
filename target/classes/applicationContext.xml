@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+    <bean id="SpringDao" class="com.wbazmy.Dao.DaoClass">
+        <property name="name" value="wbazmy"></property>
+        <property name="num" value="8"></property>
+        <property name="list">
+            <list>
+                <value>a</value>
+                <value>b</value>
+                <value>c</value>
+            </list>
+        </property>
+    </bean>
+    <bean id="SpringService" class="com.wbazmy.Service.UserService">
+        <constructor-arg name="userDao" ref="SpringDao"></constructor-arg>
+    </bean>
+</beans>
