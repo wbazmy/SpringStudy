@@ -13,7 +13,7 @@ public class Test {
 
     public static void main(String[] args) {
         ApplicationContext app = new ClassPathXmlApplicationContext("applicationContext.xml");
-        TargetInterface t= (TargetInterface) app.getBean("target");
+        TargetInterface t = (TargetInterface) app.getBean("target");
         t.get();
     }
 }
